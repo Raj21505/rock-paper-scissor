@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Paper Scissors</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="game-container">
+
+    <h1 class="title">Rock • Paper • Scissors</h1>
+
+    <!-- ROUND SELECTION -->
+    <div id="roundSelection" class="round-box">
+        <h2>Select Number of Rounds</h2>
+        <div class="round-options">
+            <button onclick="startGame(3)">3</button>
+            <button onclick="startGame(5)">5</button>
+            <button onclick="startGame(7)">7</button>
+            <button onclick="startGame(9)">9</button>
+        </div>
+    </div>
+
+    <!-- GAME AREA -->
+    <div id="gameArea" class="hidden">
+
+        <div class="scoreboard">
+            <p>Player: <span id="playerScore">0</span></p>
+            <p>Computer: <span id="computerScore">0</span></p>
+            <p>Round: <span id="roundNumber">0</span>/<span id="totalRounds">0</span></p>
+        </div>
+
+        <div class="hands">
+            <div id="playerHand" class="hand">✊</div>
+            <div id="computerHand" class="hand">✊</div>
+        </div>
+
+        <p id="resultText" class="result-text">Make your move!</p>
+
+        <div class="choices">
+            <div onclick="playerChoose('rock')" class="choice">✊</div>
+            <div onclick="playerChoose('paper')" class="choice">✋</div>
+            <div onclick="playerChoose('scissors')" class="choice">✌️</div>
+        </div>
+
+    </div>
+
+    <!-- END SCREEN -->
+    <div id="endScreen" class="hidden end-screen">
+        <h2 id="finalResult"></h2>
+        <div class="end-buttons">
+            <button onclick="restartGame()" class="end-btn">Play Again</button>
+            <button onclick="exitGame()" class="end-btn">Exit</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

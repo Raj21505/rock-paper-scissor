@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    background: #f2f4f8;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.game-container {
+    width: 95%;
+    max-width: 650px; /* slightly smaller */
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 42px; /* slightly smaller */
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* ROUND SELECT UI */
+.round-box {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease;
+}
+
+.round-options button {
+    margin: 10px;
+    padding: 12px 35px;
+    font-size: 22px;
+    border-radius: 12px;
+    border: none;
+    background: #4a7cfe;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.round-options button:hover {
+    background: #325eed;
+}
+
+/* SCOREBOARD */
+.scoreboard {
+    margin-top: 15px;
+    background: #fff;
+    padding: 15px; /* smaller padding */
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    animation: fadeIn 0.5s ease;
+}
+
+/* HAND SYMBOLS WITH BOXES */
+.hands {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.hand {
+    font-size: 100px; /* smaller hands */
+    transition: transform 0.5s ease, opacity 0.2s;
+    opacity: 0;
+    transform: scale(0.8);
+    padding: 18px;
+    border-radius: 12px;
+    background: #e0e7ff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hand.show {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* SHAKE ANIMATION */
+@keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-6px); }
+}
+
+.shake {
+    animation: shake 0.6s ease;
+}
+
+/* RESULT TEXT */
+.result-text {
+    font-size: 24px;
+    margin-top: 15px;
+    color: #333;
+    font-weight: 500;
+    min-height: 32px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* CHOICE BOXES */
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.choice {
+    font-size: 70px; /* slightly smaller */
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    padding: 16px;
+    border-radius: 12px;
+    background: #e0e7ff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.choice:hover {
+    transform: scale(1.2);
+    background: #c3d0ff;
+}
+
+/* END SCREEN */
+.end-screen {
+    background: white;
+    padding: 25px; /* smaller padding */
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+.end-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.end-btn {
+    padding: 10px 28px; /* slightly smaller buttons */
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    background: #4a7cfe;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.end-btn:hover {
+    background: #325eed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeInScale {
+    0% {opacity:0; transform: scale(0.7);}
+    100% {opacity:1; transform: scale(1);}
+}
+
+.hidden { display: none; }
